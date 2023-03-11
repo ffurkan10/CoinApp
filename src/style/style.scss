@@ -1,0 +1,21 @@
+@import "./navbar.scss";
+@import "./home.scss";
+@import "./coinDetail.scss";
+@import "./popular.scss";
+@import "./favorite.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &__footer {
+    margin-top: auto;
+  }
+}

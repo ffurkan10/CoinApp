@@ -1,0 +1,102 @@
+.coins {
+  margin-top: 50px;
+  padding: 10px;
+  &__headers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+    &__name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100px;
+    }
+    &__values {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style-type: none;
+      li {
+        width: 200px;
+      }
+    }
+  }
+
+  &__container {
+    max-width: 1330px;
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    &__lists {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block: 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 15px;
+        &:hover {
+          transition: all 0.3s ease-in-out;
+          background-color: rgb(223, 223, 223);
+        }
+        &__name {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 200px;
+          &__rank {
+            display: flex;
+            align-items: center;
+            button {
+              background-color: transparent;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              margin-right: 5px;
+            }
+          }
+          &__symbol {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 150px;
+            span {
+              color: gray;
+              font-size: 14px;
+            }
+            p {
+              margin-inline: 10px;
+            }
+            img {
+              width: 30px;
+            }
+          }
+        }
+        &__values {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          list-style-type: none;
+          &__detail {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.down {
+  color: red;
+}
+.up {
+  color: green;
+}

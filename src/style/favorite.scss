@@ -1,0 +1,46 @@
+.favorite {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #8dc647;
+  padding: 20px;
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__container {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__name {
+        display: flex;
+        align-items: center;
+        p {
+          margin-left: 10px;
+        }
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      &__card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block: 10px;
+        &__name {
+          display: flex;
+          align-items: center;
+          button {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
