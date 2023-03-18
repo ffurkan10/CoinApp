@@ -1,0 +1,18 @@
+.input {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  max-width: 1300px;
+  margin: 0 auto;
+  &__container {
+    margin-bottom: 30px;
+    input {
+      border: 1px solid #8dc647;
+      border-radius: 20px;
+      width: 200px;
+      height: 30px;
+      padding: 10px;
+      outline: none;
+    }
+  }
+}
