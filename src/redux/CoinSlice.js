@@ -5,12 +5,20 @@ const initialState = {
   coins: [],
   status: "idle",
   error: null,
+  filteredCoins: [],
 };
 
 const CoinSlice = createSlice({
   name: "coins",
   initialState,
-  reducers: {},
+  reducers: {
+    filter: (state, action) => {
+      const term = action.payload.toLowerCase();
+      state.filteredCoins = state.coins.filter((coin) => {
+        return coin.name.toLowerCase().includes(term);
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCoins.pending, (state) => {
       state.status = "loading";
@@ -25,6 +33,9 @@ const CoinSlice = createSlice({
     });
   },
 });
+
+export const { filter } = CoinSlice.actions;
+export const selectFilteredCoins = (state) => state.data.filteredCoins;
 
 export const selectAllCoins = (state) => state.data.coins;
 
