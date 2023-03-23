@@ -37,7 +37,7 @@ const PopularCoins = () => {
                 </div>
                 <div className="popular__container__list__card__detail__price">
                   <p>
-                    <strong>{popular?.item?.price_btc.toFixed(10)}</strong>
+                    <strong>{popular?.item?.price_btc}</strong>
                   </p>
                 </div>
               </div>
