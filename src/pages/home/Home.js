@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCoins } from "../../api/Api";
 import CoinList from "../../components/coinList/CoinList";
@@ -10,6 +10,7 @@ import {
   selectAllCoins,
   selectFilteredCoins,
 } from "../../redux/CoinSlice";
+import * as AiIcons from "react-icons/ai";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -17,12 +18,21 @@ const Home = () => {
   const status = useSelector((state) => state.data.status);
   const error = useSelector((state) => state.data.error);
   const filteredCoins = useSelector(selectFilteredCoins);
-
+  const targetRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [scrollHeight, setScrollHeight] = useState(0);
 
   useEffect(() => {
     dispatch(fetchCoins());
   }, [dispatch]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollHeight(window.pageYOffset);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
@@ -39,10 +49,18 @@ const Home = () => {
     return <h1>{error}</h1>;
   }
 
+  const handleClick = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-      <Input searchTerm={searchTerm} handleChange={handleChange} />
-      <Favorites />
+      <div ref={targetRef}>
+        <Input searchTerm={searchTerm} handleChange={handleChange} />
+        <Favorites />
+      </div>
 
       <div className="coins">
         <div className="coins__headers">
@@ -71,6 +89,11 @@ const Home = () => {
               <CoinList key={coins.id} coins={coins} />
             ))}
           </ul>
+          {scrollHeight > 500 && (
+            <button className="coins__container__btn" onClick={handleClick}>
+              <AiIcons.AiOutlineArrowUp size={40} fill={"#8dc647"} />
+            </button>
+          )}
         </div>
       </div>
     </>
