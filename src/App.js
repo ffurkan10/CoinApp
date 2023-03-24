@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
-      <ToastContainer position="bottom-right" />
+      <ToastContainer position="top-right" />
       <Router>
         <div className="app">
           <header>
