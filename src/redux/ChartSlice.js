@@ -1,26 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCoinDetail } from "../api/Api";
+import { fetchChart } from "../api/Api";
 
 const initialState = {
-  detail: [],
+  charts: [],
   status: "idle",
   error: null,
 };
 
 const CoinDetailSlice = createSlice({
-  name: "coinDetail",
+  name: "coinChart",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCoinDetail.pending, (state) => {
+      .addCase(fetchChart.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchCoinDetail.fulfilled, (state, action) => {
+      .addCase(fetchChart.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.detail = action.payload;
+        state.charts = action.payload;
       })
-      .addCase(fetchCoinDetail.rejected, (state, action) => {
+      .addCase(fetchChart.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

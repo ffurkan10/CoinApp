@@ -30,9 +30,9 @@ ChartJS.register(
 const Chart = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const status = useSelector((state) => state.detail.status);
-  const error = useSelector((state) => state.detail.error);
-  const chart = useSelector((state) => state.detail.charts);
+  const status = useSelector((state) => state.chart.status);
+  const error = useSelector((state) => state.chart.error);
+  const chart = useSelector((state) => state.chart.charts);
 
   useEffect(() => {
     if (status === "idle") {

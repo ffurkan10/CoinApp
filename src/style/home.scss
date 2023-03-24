@@ -74,6 +74,10 @@
             }
             p {
               margin-inline: 10px;
+              &:hover {
+                scale: (1.1);
+                transition: all 0.2s ease-out;
+              }
             }
             img {
               width: 30px;

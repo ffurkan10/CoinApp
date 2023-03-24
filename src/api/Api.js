@@ -19,7 +19,7 @@ export const fetchCoinDetail = createAsyncThunk(
 );
 
 export const fetchChart = createAsyncThunk(
-  "coinDetail/fetchChart",
+  "coinChart/fetchChart",
   async (id) => {
     const response = await axios.get(
       `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7`
