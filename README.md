@@ -10,7 +10,7 @@
 - Redux Toolkit
 - SASS / SCSS
 - React Icons
-- Chart.js for market price changes
+- Chart.js
 - React Router V6 
 - Axios
 - Moment
