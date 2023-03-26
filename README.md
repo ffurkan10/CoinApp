@@ -10,13 +10,13 @@
 - Redux Toolkit
 - SASS / SCSS
 - React Icons
-- Chart.js
+- Chart.js for market price changes
 - React Router V6 
-- Axios
-- Moment
-- React-Toastify
-- React-loader-spinner
-- Redux-logger
+- Axios for API calls
+- Moment for convert date time
+- React-Toastify for notification
+- React-loader-spinner for loading
+- Redux-logger for actions
 
 <div align="center">
 
