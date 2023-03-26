@@ -13,18 +13,14 @@ function App() {
       <ToastContainer position="top-right" />
       <Router>
         <div className="app">
-          <header>
-            <Navbar />
-          </header>
-          <section>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/coin/:id" element={<CoinDetail />} />
-            </Routes>
-          </section>
-          <footer className="app__footer">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/coin/:id" element={<CoinDetail />} />
+          </Routes>
+          <div className="app__footer">
             <Footer />
-          </footer>
+          </div>
         </div>
       </Router>
     </>

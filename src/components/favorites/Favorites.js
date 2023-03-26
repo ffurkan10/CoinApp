@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as AiIcons from "react-icons/ai";
 import { removeFavorite } from "../../redux/FavoriteSlice";
+import { Link } from "react-router-dom";
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites);
@@ -36,12 +37,14 @@ const Favorites = () => {
           </div>
           <ul className="favorite__container__list">
             {favorites.map((favorite) => (
-              <li className="favorite__container__list__card">
+              <li key={favorite.id} className="favorite__container__list__card">
                 <div className="favorite__container__list__card__name">
                   <button onClick={() => handleFavorite(favorite)}>
                     <AiIcons.AiFillHeart size={20} fill="red" />
                   </button>
-                  <p>{favorite.name}</p>
+                  <Link to={`/coin/${favorite.id}`}>
+                    <p>{favorite.name}</p>
+                  </Link>
                 </div>
                 <div className="favorite__container__list__card__price">
                   <p>

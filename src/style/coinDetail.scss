@@ -67,6 +67,12 @@
         }
       }
     }
+    &__explanation {
+      margin-block: 50px;
+      a {
+        color: #8dc647;
+      }
+    }
     &__chart {
       display: flex;
       align-items: center;

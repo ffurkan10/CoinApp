@@ -208,6 +208,10 @@ const CoinDetail = () => {
           </div>
         </div>
 
+        <div className="detail__container__explanation">
+          <p dangerouslySetInnerHTML={{ __html: detail?.description?.en }}></p>
+        </div>
+
         <Chart />
 
         <PopularCoins />
