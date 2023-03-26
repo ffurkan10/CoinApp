@@ -14,6 +14,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      &__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        p {
+          width: 300px;
+        }
+      }
       &__name {
         display: flex;
         align-items: center;
@@ -35,6 +44,15 @@
         align-items: center;
         justify-content: space-between;
         margin-block: 10px;
+        &__price {
+          width: 70%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            width: 300px;
+          }
+        }
         &__name {
           display: flex;
           align-items: center;
@@ -49,4 +67,10 @@
       }
     }
   }
+}
+.up {
+  color: green;
+}
+.down {
+  color: red;
 }

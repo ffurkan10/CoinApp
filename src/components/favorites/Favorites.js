@@ -33,6 +33,15 @@ const Favorites = () => {
               <p>
                 <strong>Price</strong>
               </p>
+              <p>
+                <strong>24h</strong>
+              </p>
+              <p>
+                <strong>Total Volume</strong>
+              </p>
+              <p>
+                <strong>Mkt Cap</strong>
+              </p>
             </div>
           </div>
           <ul className="favorite__container__list">
@@ -49,6 +58,25 @@ const Favorites = () => {
                 <div className="favorite__container__list__card__price">
                   <p>
                     {favorite?.current_price?.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
+                  </p>
+                  <p
+                    className={
+                      favorite?.price_change_percentage_24h < 0 ? `down` : `up`
+                    }
+                  >
+                    {favorite?.price_change_percentage_24h?.toFixed(2)}%
+                  </p>
+                  <p>
+                    {favorite?.total_volume?.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
+                  </p>
+                  <p>
+                    {favorite?.market_cap?.toLocaleString("en-US", {
                       style: "currency",
                       currency: "USD",
                     })}
